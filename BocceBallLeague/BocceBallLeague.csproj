@@ -50,6 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Migrations\201804171745419_AddedTables.cs" />
+    <Compile Include="Migrations\201804171745419_AddedTables.Designer.cs">
+      <DependentUpon>201804171745419_AddedTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Games.cs" />
     <Compile Include="Model\Players.cs" />
@@ -62,6 +66,10 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804171745419_AddedTables.resx">
+      <DependentUpon>201804171745419_AddedTables.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
