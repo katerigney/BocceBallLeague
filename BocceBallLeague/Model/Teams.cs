@@ -11,7 +11,7 @@ namespace BocceBallLeague.Model
         public int ID { get; set; }
         public string Mascot { get; set; }
         public string Colors { get; set; }
-
-        public Record Records { get; set; }
+        public int Wins { get; set; }
+        public int Losses { get; set; }
     }
 }

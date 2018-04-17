@@ -54,6 +54,22 @@
     <Compile Include="Migrations\201804171745419_AddedTables.Designer.cs">
       <DependentUpon>201804171745419_AddedTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804171848406_AddedARecordID.cs" />
+    <Compile Include="Migrations\201804171848406_AddedARecordID.Designer.cs">
+      <DependentUpon>201804171848406_AddedARecordID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171855074_Reverted.cs" />
+    <Compile Include="Migrations\201804171855074_Reverted.Designer.cs">
+      <DependentUpon>201804171855074_Reverted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171942268_RemovedAllRecordofRecords.cs" />
+    <Compile Include="Migrations\201804171942268_RemovedAllRecordofRecords.Designer.cs">
+      <DependentUpon>201804171942268_RemovedAllRecordofRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171956333_AddedWinsAndLossesToTeams.cs" />
+    <Compile Include="Migrations\201804171956333_AddedWinsAndLossesToTeams.Designer.cs">
+      <DependentUpon>201804171956333_AddedWinsAndLossesToTeams.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Games.cs" />
     <Compile Include="Model\Players.cs" />
@@ -69,6 +85,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804171745419_AddedTables.resx">
       <DependentUpon>201804171745419_AddedTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171848406_AddedARecordID.resx">
+      <DependentUpon>201804171848406_AddedARecordID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171855074_Reverted.resx">
+      <DependentUpon>201804171855074_Reverted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171942268_RemovedAllRecordofRecords.resx">
+      <DependentUpon>201804171942268_RemovedAllRecordofRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171956333_AddedWinsAndLossesToTeams.resx">
+      <DependentUpon>201804171956333_AddedWinsAndLossesToTeams.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

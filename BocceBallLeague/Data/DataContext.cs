@@ -16,7 +16,6 @@ namespace BocceBallLeague.Data
             }
 
             public DbSet<Teams> Teams { get; set; }
-            public DbSet<Record> Records { get; set; }
             public DbSet<Players> Players { get; set; }
             public DbSet<Games> Games { get; set; }
         
