@@ -154,17 +154,23 @@ namespace BocceBallLeague
                         var newGameHomeTeam = Console.ReadLine();
                         Console.WriteLine("Please enter the away team:");
                         var newGameAwayTeam = Console.ReadLine();
+                        Console.WriteLine("Please enter the game date:");
+                        Console.WriteLine("Format: YYYY-MM-DD");
+                        var newGameDate = Console.ReadLine();
 
+                        var newGameHomeTeamName = db.Teams.First(team => team.Mascot == newGameHomeTeam);
+                        var newGameAwayTeamName = db.Teams.First(team => team.Mascot == newGameAwayTeam);
 
-                        var newTeam = new Model.Teams
+                        var newGame = new Model.Games
                         {
-                            //Mascot = newTeamMascot,
-                            //Colors = newTeamColors,
+                            HomeTeam = newGameHomeTeamName,
+                            AwayTeam = newGameAwayTeamName,
+                            Date = Convert.ToDateTime(newGameDate)
                         };
-                        db.Teams.Add(newTeam);
+                        db.Games.Add(newGame);
                         db.SaveChanges();
-                        Console.WriteLine($"{newTeam.Mascot} added to the Tampa Bay Bocce Ball League!");
-                        Console.WriteLine("Do you want to enter another team? (Y) or (N)");
+                        Console.WriteLine($"Game on {newGame.Date.ToString("MMMM dd, yyyy")} added to the Tampa Bay Bocce Ball League Schedule!");
+                        Console.WriteLine("Do you want to enter another game? (Y) or (N)");
                         var reply = Console.ReadLine().ToLower();
                         if (reply == "n")
                         {
@@ -182,7 +188,6 @@ namespace BocceBallLeague
                 }
 
 
-                //Allow Julia to schedule games only in the future
                 // Allow Julia to enter in the score of a game(only in the past)
 
 
