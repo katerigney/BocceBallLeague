@@ -17,7 +17,7 @@ namespace BocceBallLeague.Model
         public Teams AwayTeam { get; set; }
 
         public int HomeScore { get; set; }
-        public string AwayScore { get; set; }
+        public int AwayScore { get; set; }
         public DateTime Date { get; set; }
         public string Notes { get; set; }
     }

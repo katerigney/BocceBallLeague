@@ -103,24 +103,74 @@ namespace BocceBallLeague
                         Console.WriteLine("Do you want to enter another team? (Y) or (N)");
                         var reply = Console.ReadLine().ToLower();
                         if (reply == "n")
-                            {
-                                addTeam = false;
-                            }
+                        {
+                            addTeam = false;
+                        }
                     }
-                    
-
-
-
                 }
                 else if (response == "player")
                 {
-                    Console.WriteLine("Select: (View) win/loss records or (Add) a team to the league");
+                    var addPlayer = true;
+                    while (addPlayer)
+                    {
+                        Console.WriteLine("Please enter player name:");
+                        var newPlayerName = Console.ReadLine();
+                        Console.WriteLine("Please enter player nickname:");
+                        var newPlayerNickname = Console.ReadLine();
+                        Console.WriteLine("Please enter player number:");
+                        var newPlayerNumber = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Which are does the player throw with? (L) or (R)");
+                        var newPlayerArm = Console.ReadLine();
+                        Console.WriteLine("Which team will the play on?");
+                        var newPlayerTeam = Console.ReadLine();
 
+                        var newPlayerTeamName = db.Teams.First(team => team.Mascot == newPlayerTeam);
+
+                        var newPlayer = new Model.Players
+                        {
+                            FullName = newPlayerName,
+                            Nickname = newPlayerNickname,
+                            Number = newPlayerNumber,
+                            ThrowingArm = newPlayerArm,
+                            Team = newPlayerTeamName
+                        };
+                        db.Players.Add(newPlayer);
+                        db.SaveChanges();
+                        Console.WriteLine($"{newPlayer.FullName} added to the Tampa Bay Bocce Ball League!");
+                        Console.WriteLine("Do you want to enter another player? (Y) or (N)");
+                        var reply = Console.ReadLine().ToLower();
+                        if (reply == "n")
+                        {
+                            addPlayer = false;
+                        }
+                    }
                 }
                 else if (response == "schedule")
                 {
-                    Console.WriteLine("Select: (View) win/loss records or (Add) a team to the league");
+                    var addGame = true;
+                    while (addGame)
+                    {
+                        Console.WriteLine("Please enter the home team:");
+                        var newGameHomeTeam = Console.ReadLine();
+                        Console.WriteLine("Please enter the away team:");
+                        var newGameAwayTeam = Console.ReadLine();
 
+
+                        var newTeam = new Model.Teams
+                        {
+                            //Mascot = newTeamMascot,
+                            //Colors = newTeamColors,
+                        };
+                        db.Teams.Add(newTeam);
+                        db.SaveChanges();
+                        Console.WriteLine($"{newTeam.Mascot} added to the Tampa Bay Bocce Ball League!");
+                        Console.WriteLine("Do you want to enter another team? (Y) or (N)");
+                        var reply = Console.ReadLine().ToLower();
+                        if (reply == "n")
+                        {
+                            addGame = false;
+                        }
+                    }
                 }
                 else if (response == "update")
                 {
@@ -132,11 +182,6 @@ namespace BocceBallLeague
                 }
 
 
-
-
-
-                // Allow Julia(the user) to create new players, and add them to a team
-                //Allow Julia to create new teams
                 //Allow Julia to schedule games only in the future
                 // Allow Julia to enter in the score of a game(only in the past)
 

@@ -13,7 +13,6 @@ namespace BocceBallLeague.Model
         public string Nickname { get; set; }
         public int Number { get; set; }
         public string ThrowingArm { get; set; }
-
         public int? TeamID { get; set; }
         public Teams Team { get; set; }
 

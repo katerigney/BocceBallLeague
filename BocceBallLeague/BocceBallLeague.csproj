@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201804171956333_AddedWinsAndLossesToTeams.Designer.cs">
       <DependentUpon>201804171956333_AddedWinsAndLossesToTeams.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804180132170_ChangedAwayScoreToBeInt.cs" />
+    <Compile Include="Migrations\201804180132170_ChangedAwayScoreToBeInt.Designer.cs">
+      <DependentUpon>201804180132170_ChangedAwayScoreToBeInt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Games.cs" />
     <Compile Include="Model\Players.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804171956333_AddedWinsAndLossesToTeams.resx">
       <DependentUpon>201804171956333_AddedWinsAndLossesToTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804180132170_ChangedAwayScoreToBeInt.resx">
+      <DependentUpon>201804180132170_ChangedAwayScoreToBeInt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
