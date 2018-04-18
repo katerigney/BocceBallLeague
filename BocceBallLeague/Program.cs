@@ -180,21 +180,36 @@ namespace BocceBallLeague
                 }
                 else if (response == "update")
                 {
+                    //Allow Julia to enter in the score of a game(only in the past)
+                    Console.WriteLine("Enter the game date:");
+                    Console.WriteLine("Format: YYYY-MM-DD");
+                    var reply = Convert.ToDateTime(Console.ReadLine());
+                    var gameToUpdate = db.Games.First(game => game.Date == reply);
 
+                    Console.WriteLine("Enter home team score:");
+                    var newHomeTeamScore = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter away team score:");
+                    var newAwayTeamScore = Convert.ToInt32(Console.ReadLine());
+
+                    var homeTeamUpdate = db.Teams.First(team => team.ID == gameToUpdate.HomeTeam.ID);
+                    var awayTeamUpdate = db.Teams.First(team => team.ID == gameToUpdate.AwayTeam.ID);
+
+                    if (newHomeTeamScore > newAwayTeamScore)
+                    {
+                        homeTeamUpdate.Wins++;
+                        awayTeamUpdate.Losses++;
+                    }
+                    else
+                    {
+                        homeTeamUpdate.Losses++;
+                        awayTeamUpdate.Wins++;
+                    }
+                    db.SaveChanges();
                 }
                 else
                 {
                     programRunning = false;
-                }
-
-
-                // Allow Julia to enter in the score of a game(only in the past)
-
-
-
-
-
-                
+                }                
             }
         }
     }
